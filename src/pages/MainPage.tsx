@@ -46,11 +46,12 @@ const MainPage = () => {
                             </div>
                         </Col>
                     </Row>
-                    <div className="my-5 flex-col md:flex-row">
+                    <div className="my-5 flex flex-col md:grid md:grid-cols-2">
                         <div className="flex flex-col  justify-center items-center">
                             <h1 className="font-bold">Что это и для кого?</h1>
                         </div>
-                        <div className="flex flex-col justify-center items-center fond-light">
+
+                        <div className="flex flex-col justify-center items-center font-light">
                             <h2>ЦИФРОВАЯ ПЛАТФОРМА - новый проект передовой инженерной школы Университета ИТМО, нацеленный на построение профессиональных связей между студентами
                                 и крупными российскими компаниями</h2>
                         </div>

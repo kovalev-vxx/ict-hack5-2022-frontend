@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ApiService} from "../API/ApiService";
+import {AuthService} from "../API/AuthService";
 
 interface MyButtonProps{
     setToken: any
@@ -10,7 +10,7 @@ interface MyButtonProps{
 const MyButton:FC<MyButtonProps> = ({setToken, username, password}) => {
 
     const getToken = async () => {
-        const {access, refresh} = await ApiService.getToken(username, password)
+        const {access, refresh} = await AuthService.getToken(username, password)
         setToken(access)
     }
 
