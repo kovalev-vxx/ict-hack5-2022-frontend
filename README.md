@@ -1,6 +1,9 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+# Ссылка на Backend
+
+[Клик](https://github.com/EgorChernov5/ict.hack_5.django).
 
 ## Available Scripts
 
