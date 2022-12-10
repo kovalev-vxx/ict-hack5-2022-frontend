@@ -1,5 +1,5 @@
-import React from 'react';
-import {Col, Layout, Menu, MenuProps, Row, Space} from "antd";
+import React, {FC} from 'react';
+import {Button, Col, Layout, Menu, MenuProps, Row, Space} from "antd";
 import Logo from "./Logo";
 import Icon from '@ant-design/icons';
 import { ReactComponent as LogoIcon } from "../static/img/logo.svg";
@@ -14,7 +14,12 @@ const items1: MenuProps['items'] = ['1', '2', '3'].map((key) => ({
 
 const {Header} = Layout
 
-const AppHeader = () => {
+interface AppHeaderProps {
+    setIsRegisterModalOpen: (value: boolean)=>void,
+    setIsLoginModalOpen:(value: boolean)=>void
+}
+
+const AppHeader:FC<AppHeaderProps> = ({setIsRegisterModalOpen, setIsLoginModalOpen}) => {
     return (
         <Header className="header z-10">
             <Row gutter={16} justify="space-around" align="middle">
@@ -28,8 +33,8 @@ const AppHeader = () => {
                     <Link to="#">Компании</Link>
                     <Link to="#">Проекты</Link>
                     <Link to="#">Биржа</Link>
-                    <Link to="#">Войти</Link>
-                    <Link to="#">Регистрация</Link>
+                    <Button type="primary" onClick={()=>{setIsLoginModalOpen(true)}}>Войти</Button>
+                    <Button type="primary" onClick={()=>{setIsRegisterModalOpen(true)}}>Регистрация</Button>
                 </Col>
             </Row>
         </Header>

@@ -11,16 +11,16 @@ export class AuthService {
         return response.data
     }
 
-    static async getToken(username: string, password: string){
+    static async getToken(email: string, password: string){
         const response = await API.post("auth/token/", {
-            username, password
+            email, password
         }, )
         return response.data
     }
 
-    static async registerUser(username:string, password:string, group:string, number:string){
+    static async registerUser(username:string, password:string, group:string, phone:string, email:string){
         const response = await API.post("auth/token/", {
-            username, password, group, number
+            username, password, group, phone, email
         }, )
         return response.data
     }

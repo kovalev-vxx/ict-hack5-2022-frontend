@@ -8,8 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 
 const MainPage = () => {
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const navigate = useNavigate();
 
     const particlesInit = useCallback(async (engine: Engine) => {
@@ -26,12 +24,6 @@ const MainPage = () => {
     return (
         <BasePage>
             <>
-                {/*<Modal title="Студентам" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={[]}>*/}
-                {/*    <h3>Публикуй свои проекты, а также принимай предложений от компаний</h3>*/}
-                {/*    <h4>После регистрации модератор проверит ваши данные, тогда вы получите статус "Подтвержен".</h4>*/}
-                {/*    <h4></h4>*/}
-
-                {/*</Modal>*/}
                 <div>
                     <Row justify="space-around" align="middle">
                         {/*style={{display:"flex", textAlign:"center", flexDirection:"column", justifyContent:"space-between"}}*/}
