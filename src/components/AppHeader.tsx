@@ -15,7 +15,7 @@ const {Header} = Layout
 
 const AppHeader = () => {
     return (
-        <Header className="header">
+        <Header className="header z-10">
             <Row gutter={16} justify="space-around" align="middle">
                 <Col span={4}>
                     <Row align="middle">
