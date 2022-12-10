@@ -22,12 +22,9 @@ function App() {
                       colorPrimary:"#7B45EC",
                       colorText:"#FFFFFF",
                       colorBgContainer:"#000000",
-                      fontFamily:"GolosRegular"
+                      fontFamily:"ALSThin",
                   },
                   components: {
-                      Menu:{
-
-                      },
                       Radio: {
                           colorPrimary: '#00b96b',
                       },

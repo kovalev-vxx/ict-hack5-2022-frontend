@@ -1,0 +1,7 @@
+.mainTitle{
+    -webkit-text-stroke: 1px white;
+    -webkit-text-fill-color: transparent;
+    font-family: ALSExtraBold, serif;
+    font-size: clamp(3em, 10vw, 5em);
+    margin: 0;
+}
