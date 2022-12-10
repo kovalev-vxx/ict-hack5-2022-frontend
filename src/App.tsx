@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useEffect, useLayoutEffect, useMemo, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {ConfigProvider, theme} from "antd";
@@ -8,6 +8,7 @@ import StudentsAbout from "./pages/students_about";
 import CompanyAbout from "./pages/CompanyAbout";
 import {useAppDispatch, useAppSelector} from "./hooks/redux";
 import {initLogin} from "./store/actions/authActions";
+import StudentsPage from "./pages/StudentsPage";
 
 interface IUser {
   username: string,
@@ -22,7 +23,7 @@ function App() {
     const {user, token} = useAppSelector(state=>state.authReducer)
 
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
         if(!user.username){
             dispatch(initLogin(token))
         }
@@ -59,6 +60,7 @@ function App() {
                       <Route path="/" element={<MainPage/>}/>
                       <Route path="/for_student" element={<StudentsAbout/>}/>
                       <Route path="/for_company" element={<CompanyAbout/>}/>
+                      <Route path="/students" element={<StudentsPage/>}/>
                   </Routes>
               </div>
           </ConfigProvider>

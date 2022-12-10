@@ -1,5 +1,5 @@
 import React, {FC, ReactNode, useCallback, useState} from 'react';
-import {Button, Checkbox, Col, Form, Input, Layout, Menu, Modal, Row, Select, theme} from "antd";
+import {Button, Checkbox, Col, Form, Input, Layout, Menu, Modal, Row, Select, Spin, theme} from "antd";
 import AppHeader from "../components/AppHeader";
 import Icon from "@ant-design/icons";
 import { ReactComponent as LogoIcon } from "../static/img/logo.svg";
@@ -7,7 +7,7 @@ import Particles from "react-tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import {useDispatch} from "react-redux";
-import {useAppDispatch} from "../hooks/redux";
+import {useAppDispatch, useAppSelector} from "../hooks/redux";
 import {login, register} from "../store/actions/authActions";
 
 
@@ -22,6 +22,7 @@ const BasePage:FC<BasePageProps> = ({children}) => {
     const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
     const {Option} = Select
+    const {isLoading} = useAppSelector(state => state.authReducer)
 
     const onRegister = (values: any) => {
         dispatch(register(values.username, values.password, values.phone, values.group, values.email))
@@ -86,9 +87,12 @@ const BasePage:FC<BasePageProps> = ({children}) => {
                     </Form.Item>
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                        <Button type="primary" htmlType="submit">
-                            Зарегистрироваться
-                        </Button>
+                        <div className="flex gap-4 items-center">
+                            <Button type="primary" htmlType="submit">
+                                Зарегистрироваться
+                            </Button>
+                            {isLoading && <Spin/>}
+                        </div>
                     </Form.Item>
                 </Form>
             </Modal>
@@ -121,10 +125,14 @@ const BasePage:FC<BasePageProps> = ({children}) => {
                     </Form.Item>
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                        <Button type="primary" htmlType="submit">
-                            Войти
-                        </Button>
+                        <div className="flex gap-4 items-center">
+                            <Button type="primary" htmlType="submit">
+                                Войти
+                            </Button>
+                            {isLoading && <Spin/>}
+                        </div>
                     </Form.Item>
+
                 </Form>
             </Modal>
             <Layout>

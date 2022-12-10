@@ -42,14 +42,8 @@ export const initLogin = (token:string) => {
     }
 }
 
-// export const logout = (token:string) => {
-//     return async (dispatch:AppDispatch) => {
-//         try {
-//             dispatch(authSlice.actions.loginIsLoading())
-//             await AuthService.logout(token)
-//             dispatch(authSlice.actions.logout())
-//         } catch (e) {
-//             dispatch(authSlice.actions.loginError(e))
-//         }
-//     }
-// }
+export const logout = () => {
+    return async (dispatch:AppDispatch) => {
+        dispatch(authSlice.actions.logout())
+    }
+}
