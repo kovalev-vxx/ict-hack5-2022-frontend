@@ -19,7 +19,7 @@ export class AuthService {
     }
 
     static async registerUser(username:string, password:string, group:string, phone:string, email:string){
-        const response = await API.post("auth/token/", {
+        const response = await API.post("auth/users/", {
             username, password, group, phone, email
         }, )
         return response.data

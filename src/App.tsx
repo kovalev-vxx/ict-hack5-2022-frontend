@@ -6,6 +6,8 @@ import {Route, Routes} from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import StudentsAbout from "./pages/students_about";
 import CompanyAbout from "./pages/CompanyAbout";
+import {useAppDispatch, useAppSelector} from "./hooks/redux";
+import {initLogin} from "./store/actions/authActions";
 
 interface IUser {
   username: string,
@@ -16,6 +18,17 @@ interface IUser {
 const { darkAlgorithm, compactAlgorithm } = theme;
 
 function App() {
+    const dispatch = useAppDispatch()
+    const {user, token} = useAppSelector(state=>state.authReducer)
+
+
+    useEffect(()=>{
+        if(!user.username){
+            dispatch(initLogin(token))
+        }
+    }, [])
+
+
   return (
       <>
           <ConfigProvider

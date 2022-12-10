@@ -1,11 +1,14 @@
 import React, {FC, ReactNode, useCallback, useState} from 'react';
-import {Button, Checkbox, Col, Form, Input, Layout, Menu, Modal, Row, theme} from "antd";
+import {Button, Checkbox, Col, Form, Input, Layout, Menu, Modal, Row, Select, theme} from "antd";
 import AppHeader from "../components/AppHeader";
 import Icon from "@ant-design/icons";
 import { ReactComponent as LogoIcon } from "../static/img/logo.svg";
 import Particles from "react-tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
+import {useDispatch} from "react-redux";
+import {useAppDispatch} from "../hooks/redux";
+import {login, register} from "../store/actions/authActions";
 
 
 interface BasePageProps {
@@ -15,12 +18,19 @@ interface BasePageProps {
 const {Content, Footer} = Layout
 
 const BasePage:FC<BasePageProps> = ({children}) => {
+    const dispatch = useAppDispatch()
     const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [phone, setPhone] = useState("")
-    const [group, setGroup] = useState("")
+    const {Option} = Select
+
+    const onRegister = (values: any) => {
+        dispatch(register(values.username, values.password, values.phone, values.group, values.email))
+    };
+
+    const onLogin = (values: any) => {
+        dispatch(login(values.email, values.password))
+    };
+
 
 
 
@@ -32,38 +42,90 @@ const BasePage:FC<BasePageProps> = ({children}) => {
                     labelCol={{ span: 8 }}
                     wrapperCol={{ span: 16 }}
                     initialValues={{ remember: true }}
-                    // onFinish={onFinish}
+                    onFinish={onRegister}
                     // onFinishFailed={onFinishFailed}
                     autoComplete="off"
                 >
                     <Form.Item
-                        label="Username"
+                        label="Логин"
                         name="username"
-                        rules={[{ required: true, message: 'Please input your username!' }]}
+                        rules={[{ required: true, message: 'Введите имя пользователя!' }]}
                     >
-                        <Input />
+                        <Input/>
+                    </Form.Item>
+                    <Form.Item
+                        label="Email"
+                        name="email"
+                        rules={[{ required: true, message: 'Введите Email!' }]}
+                    >
+                        <Input/>
                     </Form.Item>
 
                     <Form.Item
-                        label="Password"
+                        label="Телефон"
+                        name="phone"
+                        rules={[{ required: true, message: 'Введите номер телефона!', }]}
+                    >
+                        <Input defaultValue="+7"/>
+                    </Form.Item>
+
+                    <Form.Item name="group" label="Роль" rules={[{required:true, message: "Выберете роль!"}]}>
+                        <Select
+                        placeholder="Кто вы?">
+                            <Option value="S">Студет</Option>
+                            <Option value="C">Компания</Option>
+                        </Select>
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Пароль"
                         name="password"
-                        rules={[{ required: true, message: 'Please input your password!' }]}
+                        rules={[{ required: true, message: 'Введите пароль!' }]}
                     >
                         <Input.Password />
                     </Form.Item>
 
-                    <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item>
-
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                         <Button type="primary" htmlType="submit">
-                            Submit
+                            Зарегистрироваться
                         </Button>
                     </Form.Item>
                 </Form>
             </Modal>
             <Modal title="Вход" open={isLoginModalOpen} onOk={()=>{setIsLoginModalOpen(false)}} onCancel={()=>{setIsLoginModalOpen(false)}} footer={[]}>
+                <Form
+                    name="basic"
+                    labelCol={{ span: 8 }}
+                    wrapperCol={{ span: 16 }}
+                    initialValues={{ remember: true }}
+                    onFinish={onLogin}
+                    // onFinishFailed={onFinishFailed}
+                    autoComplete="off"
+                >
+                    <Form.Item
+                        label="Email"
+                        name="email"
+                        rules={[{ required: true, message: 'Введите Email!' }]}
+                    >
+                        <Input/>
+                    </Form.Item>
+
+
+
+                    <Form.Item
+                        label="Пароль"
+                        name="password"
+                        rules={[{ required: true, message: 'Введите пароль!' }]}
+                    >
+                        <Input.Password />
+                    </Form.Item>
+
+                    <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                        <Button type="primary" htmlType="submit">
+                            Войти
+                        </Button>
+                    </Form.Item>
+                </Form>
             </Modal>
             <Layout>
 

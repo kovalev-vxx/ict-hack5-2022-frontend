@@ -12,7 +12,7 @@ export const register = (username:string, password:string, phone:string, group:s
             const user = await AuthService.getUser(access)
             dispatch(authSlice.actions.loginSuccess({user, token:access}))
         } catch (e) {
-            dispatch(authSlice.actions.loginError(e))
+            dispatch(authSlice.actions.loginError(e as Error))
         }
     }
 }
@@ -37,7 +37,7 @@ export const initLogin = (token:string) => {
             const user = await AuthService.getUser(token)
             dispatch(authSlice.actions.loginSuccess({user, token}))
         } catch (e) {
-            dispatch(authSlice.actions.loginError(e))
+            dispatch(authSlice.actions.loginError(e as Error))
         }
     }
 }
