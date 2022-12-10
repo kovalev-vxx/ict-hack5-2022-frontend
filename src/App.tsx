@@ -1,8 +1,9 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {ApiService} from "./API/ApiService";
-import MyButton from "./components/MyButton";
+import {ConfigProvider, theme} from "antd";
+import {Route, Routes} from "react-router-dom";
+import MainPage from "./pages/MainPage";
 
 interface IUser {
   username: string,
@@ -10,37 +11,45 @@ interface IUser {
   email: string,
 }
 
+const { darkAlgorithm, compactAlgorithm } = theme;
 
 function App() {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-  const [token, setToken] = useState("")
-  const [user, setUser] = useState<IUser>({username:"", email:"", id:-1})
-
-  const getUser = async () => {
-    const user = await ApiService.getUser(token)
-    setUser(user)
-  }
-
-
-  useEffect(()=>{
-    if(token && !user.username.length){
-      getUser()
-    }
-  }, [token, getUser, user])
-
-
-  const isAuth = useMemo(()=>{
-    return !!user.username.length;
-  }, [user])
-
-
-
-
   return (
-      <div className="App">
-          <h1>Hello, Hackathon!</h1>
-      </div>
+      <>
+          <ConfigProvider
+              theme={{
+                  token:{
+                      colorPrimary:"#7B45EC",
+                      colorText:"#FFFFFF",
+                      colorBgContainer:"#000000",
+                      fontFamily:"GolosRegular"
+                  },
+                  components: {
+                      Menu:{
+
+                      },
+                      Radio: {
+                          colorPrimary: '#00b96b',
+                      },
+                      Button: {
+                          colorBorder: '#221183',
+                          colorBgContainer:"f5f5f5",
+                      },
+                      Layout:{
+                          colorBgHeader:"#000000",
+                      }
+                  },
+                  algorithm: [darkAlgorithm],
+              }}
+          >
+              <div className="App">
+                  <Routes>
+                      <Route path="/" element={<MainPage/>}/>
+                  </Routes>
+              </div>
+          </ConfigProvider>
+      </>
+
   );
 }
 

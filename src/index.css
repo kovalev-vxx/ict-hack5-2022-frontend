@@ -1,3 +1,73 @@
+@font-face {
+  font-family: "ALSRegular";
+  src: local("ALSRegular"),
+  url("static/fonts/ALS Gorizont/ALSGorizont-RegularExpanded.otf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ALSLight";
+  src: local("ALSLight"),
+  url("static/fonts/ALS Gorizont/ALSGorizont-LightExpanded.otf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ALSMedium";
+  src: local("ALSMedium"),
+  url("static/fonts/ALS Gorizont/ALSGorizont-MediumExpanded.otf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ALSThin";
+  src: local("ALSThin"),
+  url("static/fonts/ALS Gorizont/ALSGorizont-ThinExpanded.otf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ALSBold";
+  src: local("ALSBold"),
+  url("static/fonts/ALS Gorizont/ALSGorizont-BoldExpanded.otf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "ALSExtraBold";
+  src: local("ALSExtraBold"),
+  url("static/fonts/ALS Gorizont/ALSGorizont-ExtraBoldExpanded.otf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "ALSVariable";
+  src: local("ALSVariable"),
+  url("static/fonts/ALS Gorizont/ALS Gorizont Variable.ttf") format("truetype");
+  font-weight: auto;
+}
+
+@font-face {
+  font-family: "GolosRegular";
+  src: local("GolosRegular"),
+  url("static/fonts/Golos/Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "GolosMedium";
+  src: local("GolosMedium"),
+  url("static/fonts/Golos/Medium.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "GolosBold";
+  src: local("GolosBold"),
+  url("static/fonts/Golos/Bold.ttf") format("truetype");
+  font-weight: normal;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +81,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
