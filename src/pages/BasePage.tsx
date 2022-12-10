@@ -21,7 +21,7 @@ const BasePage:FC<BasePageProps> = ({children}) => {
         <>
             <Layout>
                 <AppHeader/>
-                <Content style={{ padding: '50px 50px', color:"white" }}>{
+                <Content className="container mx-auto px-4 max-w-5xl flex flex-col gap-2 text-white">{
                     children
                 }</Content>
                 <Footer className="z-10">footer</Footer>

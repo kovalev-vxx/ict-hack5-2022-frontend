@@ -4,6 +4,7 @@ import Logo from "./Logo";
 import Icon from '@ant-design/icons';
 import { ReactComponent as LogoIcon } from "../static/img/logo.svg";
 import { ReactComponent as PishIcon } from "../static/img/pish_logo.svg";
+import {Link} from "react-router-dom";
 
 
 const items1: MenuProps['items'] = ['1', '2', '3'].map((key) => ({
@@ -22,18 +23,13 @@ const AppHeader = () => {
                         <Icon component={LogoIcon} style={{ fontSize: '150px', position:"absolute"}}/>
                     </Row>
                 </Col>
-                <Col span={16}>
-                    <Menu
-                        mode="horizontal"
-                        defaultSelectedKeys={['2']}
-                        items={new Array(15).fill(null).map((_, index) => {
-                            const key = index + 1;
-                            return {
-                                key,
-                                label: `nav ${key}`,
-                            };
-                        })}
-                    />
+                <Col span={16} className="flex justify-between items-end">
+                    <Link to="#">Студенты</Link>
+                    <Link to="#">Компании</Link>
+                    <Link to="#">Проекты</Link>
+                    <Link to="#">Биржа</Link>
+                    <Link to="#">Войти</Link>
+                    <Link to="#">Регистрация</Link>
                 </Col>
             </Row>
         </Header>

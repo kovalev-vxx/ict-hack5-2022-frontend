@@ -4,6 +4,8 @@ import './App.css';
 import {ConfigProvider, theme} from "antd";
 import {Route, Routes} from "react-router-dom";
 import MainPage from "./pages/MainPage";
+import StudentsAbout from "./pages/students_about";
+import CompanyAbout from "./pages/CompanyAbout";
 
 interface IUser {
   username: string,
@@ -22,7 +24,7 @@ function App() {
                       colorPrimary:"#7B45EC",
                       colorText:"#FFFFFF",
                       colorBgContainer:"#000000",
-                      fontFamily:"ALSThin",
+                      fontFamily:"ALSVariable",
                   },
                   components: {
                       Radio: {
@@ -42,6 +44,8 @@ function App() {
               <div className="App">
                   <Routes>
                       <Route path="/" element={<MainPage/>}/>
+                      <Route path="/for_student" element={<StudentsAbout/>}/>
+                      <Route path="/for_company" element={<CompanyAbout/>}/>
                   </Routes>
               </div>
           </ConfigProvider>
