@@ -49,6 +49,26 @@ const MainPage = () => {
                         </div>
                     </div>
                 </div>
+                <div>
+                    <p>
+                        <h2>Для студентов</h2>
+                    </p>
+                    <div className="my-5 flex flex-col md:grid md:grid-cols-2">
+                        <div className="flex flex-col  justify-center items-center">
+                            <p>Реальные проекты от ведущих компаний</p>
+                            <p>Примите участие в разработке нового продукта или решите производственную задачу совместно с партнерами платформы</p>
+                        </div>
+                        <div className="flex flex-col  justify-center items-center">
+                            <p>Стажировки и трудоустройство</p>
+                            <p>По результатам проделанной работы, получите возможность пройти учебную стажировку или стать новым сотрудником компании</p>
+                        </div>
+                        <div className="flex flex-col  justify-center items-center">
+                            <p>Реализация своих разработок</p>
+                            <p>Продвигайте собственные научные идеи, расскажите о своем стартапе
+                                и привлекайте внимание и инвестиции с помощью биржи.</p>
+                        </div>
+                    </div>
+                </div>
 
 
                 {/*<Particles*/}

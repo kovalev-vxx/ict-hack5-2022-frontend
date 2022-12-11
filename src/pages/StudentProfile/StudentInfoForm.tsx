@@ -26,85 +26,62 @@ const StudentInfoForm = () => {
 
     return (
         <>
-            <Checkbox
-                checked={componentDisabled}
-                onChange={(e) => setComponentDisabled(e.target.checked)}
-            >
-                Form disabled
-            </Checkbox>
             <Form
                 labelCol={{ span: 4 }}
                 wrapperCol={{ span: 14 }}
                 layout="horizontal"
                 onValuesChange={onFormLayoutChange}
             >
-                <Form.Item label="Checkbox" name="disabled" valuePropName="checked">
-                    <Checkbox>Checkbox</Checkbox>
-                </Form.Item>
-                <Form.Item label="Radio">
-                    <Radio.Group>
-                        <Radio value="apple"> Apple </Radio>
-                        <Radio value="pear"> Pear </Radio>
-                    </Radio.Group>
-                </Form.Item>
-                <Form.Item label="Input">
+                <Form.Item label="Имя">
                     <Input />
                 </Form.Item>
-                <Form.Item label="Select">
+                <Form.Item label="Фамиля">
+                    <Input />
+                </Form.Item>
+                <Form.Item label="Отчество">
+                    <Input />
+                </Form.Item>
+                <Form.Item label="ИСУ">
+                    <Input />
+                </Form.Item>
+                <Form.Item label="Город">
+                    <Input />
+                </Form.Item>
+                <Form.Item label="Навыки">
                     <Select>
-                        <Select.Option value="demo">Demo</Select.Option>
+                        <Select.Option value="django">Django</Select.Option>
+                        <Select.Option value="react">React</Select.Option>
                     </Select>
                 </Form.Item>
-                <Form.Item label="TreeSelect">
-                    <TreeSelect
-                        treeData={[
-                            { title: 'Light', value: 'light', children: [{ title: 'Bamboo', value: 'bamboo' }] },
-                        ]}
-                    />
+                <Form.Item label="Статус" name="disabled" valuePropName="checked">
+                    <Checkbox>В активном поиске</Checkbox>
                 </Form.Item>
-                <Form.Item label="Cascader">
-                    <Cascader
-                        options={[
-                            {
-                                value: 'zhejiang',
-                                label: 'Zhejiang',
-                                children: [
-                                    {
-                                        value: 'hangzhou',
-                                        label: 'Hangzhou',
-                                    },
-                                ],
-                            },
-                        ]}
-                    />
+                <Form.Item label="Пол">
+                    <Radio.Group>
+                        <Radio value="male"> Мужчина </Radio>
+                        <Radio value="female"> Женщина </Radio>
+                    </Radio.Group>
                 </Form.Item>
-                <Form.Item label="DatePicker">
+                <Form.Item label="Birthday">
                     <DatePicker />
                 </Form.Item>
-                <Form.Item label="RangePicker">
-                    <RangePicker />
+                <Form.Item label="Почему ты с нами?">
+                    <TextArea rows={15} />
                 </Form.Item>
-                <Form.Item label="InputNumber">
-                    <InputNumber />
-                </Form.Item>
-                <Form.Item label="TextArea">
-                    <TextArea rows={4} />
-                </Form.Item>
-                <Form.Item label="Switch" valuePropName="checked">
-                    <Switch />
-                </Form.Item>
-                <Form.Item label="Upload" valuePropName="fileList">
-                    <Upload action="/upload.do" listType="picture-card">
-                        <div>
-                            <PlusOutlined />
-                            <div style={{ marginTop: 8 }}>Upload</div>
-                        </div>
-                    </Upload>
-                </Form.Item>
-                <Form.Item label="Button">
-                    <Button>Button</Button>
+                <Form.Item className="flex flex-col gap-4 items-center">
+                    <Button>Сохранить</Button>
                 </Form.Item>
             </Form>
+
+            <div className="flex flex-col gap-4 items-center">
+                <p className="text-2xl text-center">
+                    Хорошее резюме - это резюме, которое писалось и переписывалось!
+                </p>
+                <p className="text-xl text-center">
+                    Создай и размести свое резюме.
+                </p>
+                <Button type="primary">Создать</Button>
+            </div>
         </>
     );
 };

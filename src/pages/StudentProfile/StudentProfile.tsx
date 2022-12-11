@@ -17,24 +17,25 @@ const StudentProfile = () => {
         dispatch(getStudent(token, user))
     }, [])
 
-    const withInfo = useMemo(()=>{return !!student}, [])
 
 
 
     return (
         <>
             <h1>Профиль студента</h1>
-            {!withInfo && <h1>Вы еще не внесли информацию о себе:</h1>}
-            <StudentInfoForm/>
+            {!student?.first_name && <h1>Вы еще не внесли информацию о себе:</h1>}
+            {!student?.first_name && <StudentInfoForm/>}
 
-            <Descriptions>
-                <Descriptions.Item label="Имя">{student.first_name}</Descriptions.Item>
-                <Descriptions.Item label="Фамилия">{student.last_name}</Descriptions.Item>
-                <Descriptions.Item label="Отчество">{student.family_name}</Descriptions.Item>
-                <Descriptions.Item label="Город">{student.city_of_living}</Descriptions.Item>
-                <Descriptions.Item label="Дата рождения">{student.birthday}</Descriptions.Item>
-                <Descriptions.Item label="Телефон">{student.user.phone}</Descriptions.Item>
-            </Descriptions>
+            {student && <>
+                <Descriptions>
+                    <Descriptions.Item label="Имя">{student.first_name}</Descriptions.Item>
+                    <Descriptions.Item label="Фамилия">{student.last_name}</Descriptions.Item>
+                    <Descriptions.Item label="Отчество">{student.family_name}</Descriptions.Item>
+                    <Descriptions.Item label="Город">{student.city_of_living}</Descriptions.Item>
+                    <Descriptions.Item label="Дата рождения">{student.birthday}</Descriptions.Item>
+                    <Descriptions.Item label="Телефон">{student.user.phone}</Descriptions.Item>
+                </Descriptions>
+            </>}
         </>
     );
 };

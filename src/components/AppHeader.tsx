@@ -27,10 +27,9 @@ const AppHeader:FC<AppHeaderProps> = ({setIsRegisterModalOpen, setIsLoginModalOp
                     <div className="md:pb-1">
                         <Link to={"/"}><img className="h-10" src={LogoIcon} alt="ITMO LOGO"/></Link>
                     </div>
-
                     <div className="flex justify-between gap-2 items-center">
                         <Link to="/students"><Button>Студенты</Button></Link>
-                        <Link to="#"><Button>Компании</Button></Link>
+                        <Link to="/companies"><Button>Компании</Button></Link>
                         <Link to="#"><Button>Проекты</Button></Link>
                     </div>
                 </div>
