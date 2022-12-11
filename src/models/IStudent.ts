@@ -1,5 +1,6 @@
 import {IUser} from "./IUser";
 import {ITag} from "./ITag";
+import {ICv} from "./ICv";
 
 export interface IStudent {
     id: number,
@@ -12,7 +13,7 @@ export interface IStudent {
     isu_number:string,
     is_searching:boolean,
     motivation_letter:string,
-    cv:number,
+    cv:ICv,
     user: IUser,
     tags: ITag[]
 }

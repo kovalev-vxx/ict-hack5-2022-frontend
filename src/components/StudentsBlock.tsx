@@ -10,11 +10,11 @@ interface StudentsBlockProps {
 
 const StudentsBlock:FC<StudentsBlockProps> = ({students}) => {
     return (
-        <>
-            {students.map(e=>{
+        <div className="flex flex-wrap gap-10">
+            {students.slice(0,6).map(e=>{
                 return <StudentCard student={e}/>
             })}
-        </>
+        </div>
     );
 };
 

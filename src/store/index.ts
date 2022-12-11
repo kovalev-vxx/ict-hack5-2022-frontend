@@ -3,12 +3,14 @@ import authReducer from "./slices/AuthSlice"
 import studentsReducer from "./slices/StudetnsSlice"
 import studentReducer from "./slices/StudentSlice"
 import companiesReducer from "./slices/CompaniesSlice"
+import companyReducer from "./slices/CompanySlice"
 
 const rootReducer = combineReducers({
     authReducer,
     studentsReducer,
     studentReducer,
-    companiesReducer
+    companiesReducer,
+    companyReducer
 })
 
 export const setupStore = () => {

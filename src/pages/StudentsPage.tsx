@@ -32,26 +32,12 @@ const StudentsPage = () => {
 
     return (
         <BasePage>
-            <Carousel autoplay>
-                <div>
-                    <h3 style={contentStyle}>1</h3>
-                </div>
-                <div>
-                    <h3 style={contentStyle}>2</h3>
-                </div>
-                <div>
-                    <h3 style={contentStyle}>3</h3>
-                </div>
-                <div>
-                    <h3 style={contentStyle}>4</h3>
-                </div>
-            </Carousel>
             <div>
                 <h1>Самые компетентные</h1>
                 <StudentsBlock students={sortedByTechPart}/>
             </div>
             <div>
-                <h1>Самые быстрые</h1>
+                <h1>Самые пунктуальные</h1>
                 <StudentsBlock students={sortedByWorkSpeed}/>
             </div>
             <div>

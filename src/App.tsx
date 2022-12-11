@@ -11,6 +11,7 @@ import {initLogin} from "./store/actions/authActions";
 import StudentsPage from "./pages/StudentsPage";
 import Profile from "./pages/Profile";
 import CompaniesPage from "./pages/CompaniesPage";
+import Student from "./pages/Student";
 
 const { darkAlgorithm, compactAlgorithm } = theme;
 
@@ -58,7 +59,8 @@ function App() {
                       <Route path="/for_company" element={<CompanyAbout/>}/>
                       <Route path="/students" element={<StudentsPage/>}/>
                       <Route path="/companies" element={<CompaniesPage/>}/>
-                      <Route path="/profile" element={<Profile/>}/>
+                      <Route path="/students/:id" element={<Student/>}/>
+                      <Route path="/profile/" element={<Profile/>}/>
                   </Routes>
               </div>
           </ConfigProvider>

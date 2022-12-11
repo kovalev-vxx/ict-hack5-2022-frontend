@@ -1,6 +1,7 @@
 import {IStudent} from "../../models/IStudent";
 import {createSlice} from "@reduxjs/toolkit";
 import {initialState as AuthInitialState} from "./AuthSlice";
+import {initialState as CVInitialState} from "./CVSlice";
 
 
 interface StudentState {
@@ -10,7 +11,7 @@ interface StudentState {
 }
 
 const initialState: StudentState = {
-    student: {first_name: "", family_name: "", city_of_living:"", cv: -1, last_name:"", tags:[], id:-1, gender:"", user: AuthInitialState.user, birthday:"", is_searching:false, isu_number:"", motivation_letter:"" },
+    student: {first_name: "", family_name: "", city_of_living:"", cv: CVInitialState.cv, last_name:"", tags:[], id:-1, gender:"", user: AuthInitialState.user, birthday:"", is_searching:false, isu_number:"", motivation_letter:"" },
     isLoading:false,
     error:""
 }

@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../hooks/redux";
 import {getCompanies} from "../store/actions/companiesActions";
 import BasePage from "./BasePage";
+import CompaniesBlock from "../components/CompaniesBlock";
 
 const CompaniesPage = () => {
     const {companies} = useAppSelector(state => state.companiesReducer)
@@ -15,7 +16,8 @@ const CompaniesPage = () => {
 
     return (
         <BasePage>
-
+            <h1>Компании на платформе</h1>
+            <CompaniesBlock companies={companies}/>
         </BasePage>
     );
 };

@@ -3,7 +3,7 @@ import {useAppSelector} from "../hooks/redux";
 import BasePage from "./BasePage";
 import AdminProfile from "./AdminProfile";
 import StudentProfile from "./StudentProfile/StudentProfile";
-import CompanyProfile from "./CompanyProfile";
+import CompanyProfile from "./CompanyProfile/CompanyProfile";
 
 
 const Profile = () => {

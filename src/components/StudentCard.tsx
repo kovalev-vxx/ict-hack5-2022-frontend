@@ -23,7 +23,7 @@ const StudentCard:FC<StudentCardProps> = ({student}) => {
                 <img
                     style={{objectFit: "contain"}}
                     alt="example"
-                    src="https://avatars.githubusercontent.com/u/63135167?v=4"
+                    src={student.cv.photo}
                 />
             }
             actions={[

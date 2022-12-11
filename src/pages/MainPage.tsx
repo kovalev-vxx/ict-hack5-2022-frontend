@@ -49,23 +49,54 @@ const MainPage = () => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <p>
-                        <h2>Для студентов</h2>
-                    </p>
-                    <div className="my-5 flex flex-col md:grid md:grid-cols-2">
-                        <div className="flex flex-col  justify-center items-center">
-                            <p>Реальные проекты от ведущих компаний</p>
-                            <p>Примите участие в разработке нового продукта или решите производственную задачу совместно с партнерами платформы</p>
+                <div className="mt-8">
+                    <h2 className="text-5xl">Для студентов</h2>
+                    <div className="mx-1 flex flex-col  md:flex-row gap-4">
+                        <div className="flex flex-col justify-center items-left">
+                            <p className="text-2xl font-bold m-1">Реальные проекты от ведущих компаний</p>
+                            <p className="text-xl m-1">Примите участие в разработке нового продукта или решите производственную задачу совместно с партнерами платформы</p>
                         </div>
-                        <div className="flex flex-col  justify-center items-center">
-                            <p>Стажировки и трудоустройство</p>
-                            <p>По результатам проделанной работы, получите возможность пройти учебную стажировку или стать новым сотрудником компании</p>
+                        <div className="flex flex-col justify-center items-left">
+                            <p className="text-2xl font-bold m-1">Стажировки и трудоустройство</p>
+                            <p className="text-xl m-1">По результатам проделанной работы, получите возможность пройти учебную стажировку или стать новым сотрудником компании</p>
                         </div>
-                        <div className="flex flex-col  justify-center items-center">
-                            <p>Реализация своих разработок</p>
-                            <p>Продвигайте собственные научные идеи, расскажите о своем стартапе
-                                и привлекайте внимание и инвестиции с помощью биржи.</p>
+                        <div className="flex flex-col justify-center items-left">
+                            <p className="text-2xl font-bold m-1">Реализация своих разработок</p>
+                            <p className="text-xl m-1">Продвигайте собственные научные идеи, расскажите о своем стартапе и привлекайте внимание и инвестиции с помощью биржи.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="mt-8">
+                    <h2 className="text-5xl">Для компаний</h2>
+                    <div className="mx-1 flex flex-col  md:flex-row gap-4">
+                        <div className="flex flex-col justify-center items-left">
+                            <p className="text-2xl font-bold m-1">Привлекайте молодых специалистов</p>
+                            <p className="text-xl m-1">Перспективные студенты ИТМО и ПИШ - новые таланты и ваши будущие сотрудники</p>
+                        </div>
+                        <div className="flex flex-col justify-center items-left">
+                            <p className="text-2xl font-bold m-1">Найдите исполнителей</p>
+                            <p className="text-xl m-1">Решением вашей производственной задачи займутся команды студентов из ведущего вуза страны</p>
+                        </div>
+                        <div className="flex flex-col justify-center items-left">
+                            <p className="text-2xl font-bold m-1">Получите доступ к резюме</p>
+                            <p className="text-xl m-1">Партнерам платформы доступна расширенная информация о профессиональных навыках исполнителей</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="mt-8">
+                    <h2 className="text-5xl text-center">Наши партнеры</h2>
+                    <div className="mx-1 items-center flex flex-col md:flex-row gap-4 md:grid md:grid-cols-4">
+                        <div className="flex flex-col justify-center w-48">
+                            <img className="object-contain" src="https://static.tildacdn.com/tild3366-3365-4162-b339-613162663336/2022-11-14_194224.jpg"/>
+                        </div>
+                        <div className="flex flex-col justify-center w-48">
+                            <img className="object-contain" src="https://static.tildacdn.com/tild6537-3463-4133-b339-666464386333/image.png"/>
+                        </div>
+                        <div className="flex flex-col justify-center w-48">
+                            <img className="object-contain" src="https://static.tildacdn.com/tild6538-3032-4037-a463-373136313838/image.png"/>
+                        </div>
+                        <div className="flex flex-col justify-center w-48">
+                            <img className="object-contain" src="https://static.tildacdn.com/tild3930-3062-4363-b763-646364303330/2022-11-14_194228.jpg"/>
                         </div>
                     </div>
                 </div>

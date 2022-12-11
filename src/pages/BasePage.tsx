@@ -141,7 +141,7 @@ const BasePage:FC<BasePageProps> = ({children}) => {
                 <Content className="container mx-auto px-4 max-w-5xl flex flex-col gap-2 text-white">{
                     children
                 }</Content>
-                <Footer className="z-10">footer</Footer>
+                <Footer className="z-10 flex flex-col justify-between items-center">ИТМО X ПИШ</Footer>
             </Layout>
         </>
 
