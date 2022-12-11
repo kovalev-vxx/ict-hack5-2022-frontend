@@ -10,8 +10,8 @@ interface AuthState {
     error: string
 }
 
-const initialState: AuthState = {
-    user: {username:"", email:"", group:"", id:-1, phone:""},
+export const initialState: AuthState = {
+    user: {username:"", email:"", group:"", id:-1, phone:"", is_staff:false},
     token: localStorage.getItem("token") ?? "",
     isLoading: false,
     isAuth: false,
@@ -37,13 +37,13 @@ export const authSlice = createSlice({
             state.isLoading = false
             state.isAuth = false
             state.error = action.payload.message
-            state.user = {username:"", email:"", group:"", id:-1, phone:""}
+            state.user = {username:"", email:"", group:"", id:-1, phone:"", is_staff:false}
             state.token = ""
         },
         logout(state){
             state.isLoading = false
             state.isAuth = false
-            state.user = {username:"", email:"", group:"", id:-1, phone:""}
+            state.user = {username:"", email:"", group:"", id:-1, phone:"", is_staff:false}
             state.token = ""
             state.error = ""
             localStorage.removeItem("token")

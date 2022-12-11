@@ -37,7 +37,7 @@ const AppHeader:FC<AppHeaderProps> = ({setIsRegisterModalOpen, setIsLoginModalOp
                 <div className="flex gap-2 justify-center items-center">
                     {isAuth ?
                         <>
-                            <Link to={"/for_student"}><Button type="primary">Профиль</Button></Link>
+                            <Link to={"/profile"}><Button type="primary">Профиль</Button></Link>
                             <Link to={"/"}><Button onClick={()=>{dispatch(logout())}}>Выйти</Button></Link>
                         </>
                         :

@@ -9,12 +9,7 @@ import CompanyAbout from "./pages/CompanyAbout";
 import {useAppDispatch, useAppSelector} from "./hooks/redux";
 import {initLogin} from "./store/actions/authActions";
 import StudentsPage from "./pages/StudentsPage";
-
-interface IUser {
-  username: string,
-  id: number,
-  email: string,
-}
+import Profile from "./pages/Profile";
 
 const { darkAlgorithm, compactAlgorithm } = theme;
 
@@ -61,6 +56,7 @@ function App() {
                       <Route path="/for_student" element={<StudentsAbout/>}/>
                       <Route path="/for_company" element={<CompanyAbout/>}/>
                       <Route path="/students" element={<StudentsPage/>}/>
+                      <Route path="/profile" element={<Profile/>}/>
                   </Routes>
               </div>
           </ConfigProvider>

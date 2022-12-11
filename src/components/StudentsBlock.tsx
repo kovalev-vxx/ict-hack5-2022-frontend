@@ -1,17 +1,20 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Avatar, Card} from "antd";
 import {IUser} from "../models/IUser";
+import {IStudent} from "../models/IStudent";
+import StudentCard from "./StudentCard";
 
-const { Meta } = Card;
+interface StudentsBlockProps {
+    students: IStudent[]
+}
 
-const StudentsBlock = () => {
-
-    // const users:IUser[] = [I]
-
+const StudentsBlock:FC<StudentsBlockProps> = ({students}) => {
     return (
-        <div>
-
-        </div>
+        <>
+            {students.map(e=>{
+                return <StudentCard student={e}/>
+            })}
+        </>
     );
 };
 
