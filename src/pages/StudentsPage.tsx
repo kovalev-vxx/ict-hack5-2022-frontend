@@ -19,7 +19,7 @@ const contentStyle: React.CSSProperties = {
 
 
 const StudentsPage = () => {
-    const {students, sortedByCommunication, sortedByTechPart, sortedByWorkSpeed} = useAppSelector(state => state.studentsReducer)
+    const {sortedByCommunication, sortedByTechPart, sortedByWorkSpeed} = useAppSelector(state => state.studentsReducer)
     const {token} = useAppSelector(state => state.authReducer)
     const dispatch = useAppDispatch()
 

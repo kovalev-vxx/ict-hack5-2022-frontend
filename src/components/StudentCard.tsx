@@ -4,7 +4,7 @@ import {Avatar, Button, Card} from "antd";
 import {EditOutlined, EllipsisOutlined, RightOutlined, SettingOutlined} from "@ant-design/icons";
 
 interface StudentCardProps{
-    student: IStudent
+    student?: IStudent
 }
 
 const { Meta } = Card;
@@ -13,7 +13,7 @@ const { Meta } = Card;
 
 const StudentCard:FC<StudentCardProps> = ({student}) => {
     const tags = useMemo(()=>{
-        return student.tags.map(e=>e.name_tag)
+        return student?.tags.map(e=>e.name_tag)
     }, [])
 
     return (
@@ -23,7 +23,7 @@ const StudentCard:FC<StudentCardProps> = ({student}) => {
                 <img
                     style={{objectFit: "contain"}}
                     alt="example"
-                    src={student.cv.photo}
+                    src={student?.cv.photo}
                 />
             }
             actions={[
@@ -31,8 +31,8 @@ const StudentCard:FC<StudentCardProps> = ({student}) => {
             ]}
         >
             <Meta
-                title={student.first_name + " " + student.last_name}
-                description={tags.join()}
+                title={student?.first_name + " " + student?.last_name}
+                description={tags?.join()}
             />
         </Card>
     );

@@ -80,7 +80,7 @@ const StudentInfoForm = () => {
                 <p className="text-xl text-center">
                     Создай и размести свое резюме.
                 </p>
-                <Button type="primary">Создать</Button>
+                {/*<Button type="primary">Создать</Button>*/}
             </div>
         </>
     );
